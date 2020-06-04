@@ -1,3 +1,5 @@
+/* bodyの内容 */
+/* headerの内容*/
 header{
     height: 100px;
     color:orange;
@@ -15,5 +17,33 @@ header{
 .header-list li{
     margin-top:30px;
     margin-right:20px;
+    float:left;
+}
+/*mainの内容*/
+.asi-area{
+    clear:both;
+    height:400px;
+    background-color: aqua;
+}
+.asi-block{
+    margin-left:20px;
+    float:left;
+}
+
+.asi-block img{
+    width:200px;
+    height:200px;
+    border: 5px solid black;
+}
+
+.asi-block p{
+    font-family:impact;
+}
+
+.other-area{
+    clear:both;
+}
+.other-block{
+    margin-left:20px;
     float:left;
 }
