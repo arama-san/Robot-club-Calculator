@@ -1,0 +1,19 @@
+header{
+    height: 100px;
+    color:orange;
+    background-color: black;
+}
+.header-logo{
+    font: size 40px;
+    margin:20px 40px;
+    float:left;
+}
+.header-list{
+    float: right;
+    list-style:none;
+}
+.header-list li{
+    margin-top:30px;
+    margin-right:20px;
+    float:left;
+}
