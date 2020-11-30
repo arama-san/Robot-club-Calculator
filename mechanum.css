@@ -1,3 +1,46 @@
 /* bodyの内容 */
+body{
+    background: radial-gradient(ellipse at center,black,rgb(4, 44, 41),rgb(45, 75, 69));
+}
 /* headerの内容*/
-/* */
+header{
+    border: 3px solid;
+    color:aquamarine;
+    height: 90px;
+    width: 100%;
+}
+header span{
+    font-size: 20px;
+}
+.header-logo{
+    float:left;
+    font: size 40px;
+    margin:20px 40px;
+}
+.header-list{
+    float: right;
+    list-style: none;
+}
+.header-list li{
+    float: left;
+    margin-top:25px;
+    margin-right:20px;
+}
+a{
+    color: aquamarine;
+}
+/* mainの内容 */
+main{
+    color: aquamarine;
+}
+.data{
+    float: right;
+}
+.inputBox{
+    color: aquamarine;
+    background-color: black;
+    width:100px;
+}
+.data p{
+    width:300px;
+}
