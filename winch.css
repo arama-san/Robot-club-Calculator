@@ -1,0 +1,71 @@
+/* bodyの内容 */
+body{
+    background: radial-gradient(ellipse at center,black,rgb(4, 44, 41),rgb(45, 75, 69));
+}
+/* headerの内容*/
+header{
+    border: 3px solid;
+    color:aquamarine;
+    height: 90px;
+    width: 100%;
+}
+header span{
+    font-size: 20px;
+}
+.header-logo{
+    float:left;
+    font: size 40px;
+    margin:20px 40px;
+}
+.header-list{
+    float: right;
+    list-style: none;
+}
+.header-list li{
+    float: left;
+    margin-top:25px;
+    margin-right:20px;
+}
+a{
+    color: aquamarine;
+}
+/* mainの内容 */
+main{
+    margin: 20px;
+    color: aquamarine;
+}
+.winch-img{
+    width: 300px;
+    height: 450px;
+    float: left;
+}
+.input-collection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+.data{
+    margin: 10px;
+    display: flex;
+    width: 450px;
+    height: 25px;
+}
+.name{
+    margin: 0;
+    width: 60%;
+}
+.inputBox{
+    margin-right: 5px;
+    color: aquamarine;
+    background-color: black;
+    border-color: aquamarine;
+    border-radius: 5px;
+    text-align: right;
+    width: 30%;
+}
+.unit{
+    margin: 0;
+    width: 10%;
+}

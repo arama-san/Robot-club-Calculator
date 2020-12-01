@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>ウインチ計算</title>
+    <link rel="stylesheet" href="winch.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="header-logo">ウインチ計算/<span>Winch-Calculation</span></h1>
+        <ul class="header-list">
+            <a href="main.html"><li>トップへ戻る</li></a>
+            <li>計算手順</li>
+        </ul>
+    </header>
+
+    <main>
+        <div class="winch">
+            <img class="winch-img" src="image/ウインチ計算用画像.jpg">
+        </div>
+
+        <div class="input-collection">
+            <div class="data">
+                <p class="name">重量/Weight</p>
+                <input type="number" value="0" class="inputBox" id="weight" onchange="change()">
+                <p class="unit">kg</p>
+            </div>
+
+            <div class="data">
+                <p class="name">機械効率/Mechanical Efficiency</p> 
+                <input type="number" value="80" min="0" max="100" class="inputBox" id="me" onchange="change()">
+                <p class="unit">%</p>
+            </div>
+
+            <div class="data">
+                <p class="name">ウインチ直径/Diameter</p>
+                <input type="number" value="0" class="inputBox" id="wheel" onchange="change()">
+                <p class="unit">mm</p>
+            </div>
+
+            <div class="data">
+                <p class="name">巻き上げ速度/Speed</p>
+                <input type="number" value="0" class="inputBox" id="v-y" onchange="change()">
+                <p class="unit">m/s</p>
+            </div>
+        </div>
+
+        </div class="out-data">
+            <div class="data">
+                <p class="name">出力/Power</p>
+                <p class="output-data" id="power"></p>
+                <p class="unit">W</p>
+            </div>
+
+            <div class="data">
+                <p class="name">出力/Power</p>
+                <p class="output-data" id="power"></p>
+                <p class="unit">W</p>
+            </div>
+
+            <div class="data">
+                <p class="name">出力/Power</p>
+                <p class="output-data" id="power"></p>
+                <p class="unit">W</p>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+    
+    </footer>
+
+    <script type="text/javascript" src="mechanum.js"></script>
+</body>
+
+</html>
