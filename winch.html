@@ -18,50 +18,57 @@
         <div class="winch">
             <img class="winch-img" src="image/ウインチ計算用画像.jpg">
         </div>
-
+    <!--　入力欄　-->
         <div class="input-collection">
             <div class="data">
                 <p class="name">重量/Weight</p>
-                <input type="number" value="0" class="inputBox" id="weight" onchange="change()">
+                <input type="number" value="0" min="0" class="input-Box" id="weight" onchange="change()">
                 <p class="unit">kg</p>
             </div>
 
             <div class="data">
                 <p class="name">機械効率/Mechanical Efficiency</p> 
-                <input type="number" value="80" min="0" max="100" class="inputBox" id="me" onchange="change()">
+                <input type="number" value="80" min="0" max="100" class="input-Box" id="me" onchange="change()">
                 <p class="unit">%</p>
             </div>
 
             <div class="data">
                 <p class="name">ウインチ直径/Diameter</p>
-                <input type="number" value="0" class="inputBox" id="wheel" onchange="change()">
+                <input type="number" value="0" min="0" class="input-Box" id="wheel" onchange="change()">
                 <p class="unit">mm</p>
             </div>
 
             <div class="data">
                 <p class="name">巻き上げ速度/Speed</p>
-                <input type="number" value="0" class="inputBox" id="v-y" onchange="change()">
+                <input type="number" value="0" min="0" class="input-Box" id="v_y" onchange="change()">
                 <p class="unit">m/s</p>
             </div>
+
+            <!-- 計算ボタン -->
+            <button class="cal-button" onclick="clickBtn1()">-計算/Calculate-</button>
+            <!--リセットボタン-->
+            <button class="cal-button" onclick="clickBtn2()">-リセット/Reset-</button>
+            
         </div>
 
-        </div class="out-data">
+    <!--　計算結果表示　-->
+        <div class="output-collection">
             <div class="data">
                 <p class="name">出力/Power</p>
-                <p class="output-data" id="power"></p>
+                <p class="output-Box" id="power" type="number">0</p>
                 <p class="unit">W</p>
             </div>
 
             <div class="data">
-                <p class="name">出力/Power</p>
-                <p class="output-data" id="power"></p>
-                <p class="unit">W</p>
+                <p class="name">回転数/Revolutions</p>
+                <p class="output-Box" id="rpm" type="number">0</p>
+                <p class="unit">rpm</p>
             </div>
 
             <div class="data">
-                <p class="name">出力/Power</p>
-                <p class="output-data" id="power"></p>
-                <p class="unit">W</p>
+                <p class="name">トルク/Torque</p>
+                <p class="output-Box" id="tor" type="number">0</p>
+                <p class="unit">kg・cm</p>
             </div>
         </div>
         
@@ -71,7 +78,7 @@
     
     </footer>
 
-    <script type="text/javascript" src="mechanum.js"></script>
+    <script type="text/javascript" src="winch.js"></script>
 </body>
 
 </html>
