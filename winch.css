@@ -68,7 +68,11 @@ main{
 }
 .unit{
     margin: 0;
-    width: 15%;
+    width: 18%;
+    color: aquamarine;
+    background-color: black;
+    border: 1px solid;
+    border-color: aquamarine;
 }
 .cal-button{
     color: aquamarine;
