@@ -68,7 +68,7 @@ main{
 }
 .unit{
     margin: 0;
-    width: 10%;
+    width: 15%;
 }
 .cal-button{
     color: aquamarine;
@@ -79,6 +79,10 @@ main{
 }
 .cal-button:hover{
     color: red;
+}
+.cal-button:active{
+    color: black;
+    background-color: red;
 }
 .output-collection{
     display: flex;
