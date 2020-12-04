@@ -23,7 +23,10 @@
             <div class="data">
                 <p class="name">重量/Weight</p>
                 <input type="number" value="0" min="0" class="input-Box" id="weight" onchange="change()">
-                <p class="unit">kg</p>
+                <select class="unit" id="wei_unit">
+                    <option id="wei_unit1">kg</option>
+                    <option id="wei_unit2">g</option>
+                </select>
             </div>
 
             <div class="data">
@@ -35,13 +38,19 @@
             <div class="data">
                 <p class="name">ウインチ直径/Diameter</p>
                 <input type="number" value="0" min="0" class="input-Box" id="wheel" onchange="change()">
-                <p class="unit">mm</p>
+                <select class="unit" id="whe_unit">
+                    <option id="whe_unit1">mm</option>
+                    <option id="whe_unit2">cm</option>
+                </select>
             </div>
 
             <div class="data">
                 <p class="name">巻き上げ速度/Speed</p>
                 <input type="number" value="0" min="0" class="input-Box" id="v_y" onchange="change()">
-                <p class="unit">m/s</p>
+                <select class="unit" id="v_y_unit">
+                    <option id="v_y_unit1">m/s</option>
+                    <option id="v_y_unit2">mm/s</option>
+                </select>
             </div>
 
             <!-- 計算ボタン -->
@@ -68,7 +77,10 @@
             <div class="data">
                 <p class="name">トルク/Torque</p>
                 <p class="output-Box" id="tor" type="number">0</p>
-                <p class="unit">kg・cm</p>
+                <select class="unit" id="tor_unit">
+                    <option id="tor_unit1">N・m</option>
+                    <option id="tor_unit2">kg・cm</option>
+                </select>
             </div>
         </div>
         
