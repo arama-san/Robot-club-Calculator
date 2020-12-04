@@ -1,22 +1,22 @@
 
 function clickBtn1(){    
-    var weight = document.getElementById("weight").value;
-    var me = document.getElementById("me").value;
-    var wheel = document.getElementById("wheel").value;
-    var v_y = document.getElementById("v_y").value;
+    // var weight = document.getElementById("weight").value;
+    // var me = document.getElementById("me").value;
+    // var wheel = document.getElementById("wheel").value;
+    // var v_y = document.getElementById("v_y").value;
 
-    var list = new Array(4);
-    list[0] = weight;
-    list[1] = me;
-    list[2] = wheel;
-    list[3] = v_y;
+    var list = document.getElementsByClassName('input-Box');
     //数値チェック
     var check = 0;
-    for(var i; i < list.length; i++)
+    for(var i = 0; i < list.length; i++)
     {
-        if(list[i]>0) check += 0;
-        else check += 1;
+        var e = list[i].value;
+        if(e == 0){
+            check = 1;
+        }
+        else{}
     }
+    
     if(check != 0)
     {
         alert('エラー');
