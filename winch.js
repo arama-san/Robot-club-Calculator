@@ -30,7 +30,7 @@ function clickBtn1(){
         var v_y_unit = document.getElementById("v_y_unit").value;
         var tor_unit = document.getElementById("tor_unit").value;
 
-        var power = 9.8*(weight*wei_unit)*(v_y*v_y_unit)/me;
+        var power = 9.8*(weight*wei_unit)*(v_y*v_y_unit)/(me*0.001);
         var rpm = 60*(v_y*v_y_unit)/(3.141*wheel*whe_unit);
         var tor = (100*power/(rpm*1.027))*tor_unit;
         document.getElementById("power").innerHTML = power.toFixed(4);
