@@ -33,14 +33,75 @@ a{
 main{
     color: aquamarine;
 }
-.data{
-    float: right;
+.mechanum-img{
+    width: 450px;
+    height: 450px;
+    float: left;
 }
-.inputBox{
+.input-collection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 20px;
+    width:460px;
+}
+.data{
+    margin: 10px;
+    display: flex;
+    width: 100%;
+    height: 25px;
+}
+.name{
+    margin: 0;
+    width: 60%;
+}
+.input-Box{
+    margin-right: 5px;
     color: aquamarine;
     background-color: black;
-    width:100px;
+    border-color: aquamarine;
+    border-radius: 5px;
+    text-align: right;
+    width: 30%;
 }
-.data p{
-    width:300px;
+.unit{
+    margin: 0;
+    width: 18%;
+    color: aquamarine;
+    background-color: black;
+    border: 1px solid;
+    border-color: aquamarine;
+}
+.cal-button{
+    color: aquamarine;
+    background-color: black;
+    border: 1px solid;
+    width: 160px;
+    margin: 5px auto; 
+}
+.cal-button:hover{
+    color: red;
+}
+.cal-button:active{
+    color: black;
+    background-color: red;
+}
+.output-collection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 20px;
+    width: 460px;
+}
+.output-Box{
+    margin: 0px 5px 0px 0px;
+    padding-right: 15px;
+    color: aquamarine;
+    background-color: black;
+    border: 2px solid;
+    border-radius: 5px;
+    text-align: right;
+    width: 28%;
 }
