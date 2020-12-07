@@ -68,10 +68,10 @@ function clickBtn1(){
     var power4 = Math.abs(power_total*(rpm4/rpm_total));
 
     //各ホイールの負荷トルク(各ホイールの出力に応じて)
-    var tor1 = power1*wheel*0.5/v_1;
-    var tor2 = power2*wheel*0.5/v_2;
-    var tor3 = power3*wheel*0.5/v_3;
-    var tor4 = power4*wheel*0.5/v_4;
+    var tor1 = power1*wheel*0.5*tor_unit/v_1;
+    var tor2 = power2*wheel*0.5*tor_unit/v_2;
+    var tor3 = power3*wheel*0.5*tor_unit/v_3;
+    var tor4 = power4*wheel*0.5*tor_unit/v_4;
 
     //最大回転数算出
     var MAX_rpm = Math.max.apply(null, [rpm1, rpm2, rpm3, rpm4]);
@@ -81,7 +81,6 @@ function clickBtn1(){
 
     //最大トルク算出
     var MAX_tor = Math.max(tor1, tor2, tor3, tor4);
-    MAX_tor *= tor_unit; 
 
     //計算結果表示
     document.getElementById("power").innerHTML = MAX_power.toFixed(4);
