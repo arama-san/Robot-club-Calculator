@@ -112,6 +112,7 @@ table{
 
 .output_list{
     border: 1px solid;
+    text-align: right;
 }
 
 th, td{
