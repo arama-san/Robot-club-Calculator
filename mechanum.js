@@ -6,8 +6,8 @@ function clickBtn1(){
     var me = document.getElementById("me").value;
     var slope = document.getElementById("slope").value; //0 ok
     var wheel = document.getElementById("wheel").value;
-    var v_x = document.getElementById("v_x").value;//0 ok
-    var v_y = document.getElementById("v_y").value;// 0ok
+    var v_x = document.getElementById("v_x").value;// 0 ok
+    var v_y = document.getElementById("v_y").value;// 0 ok
     var v_t = document.getElementById("v_t").value;// 0 ok  単位「°/s」
     var widthA = document.getElementById("widthA").value;
     var widthB = document.getElementById("widthB").value;
@@ -41,8 +41,6 @@ function clickBtn1(){
     var a = (PI/4)-Math.atan(widthA/widthB);    //単位rad
     var L = Math.sqrt((widthA/2)**2+(widthB/2)**2);  
 
-    alert(v_t);
-    alert(L);
     //各ホイールのたる軸に平行な速度を算出
     var v_1b = -v_x*Math.sin(PI/4)+v_y*Math.cos(PI/4)+L*v_t;
     var v_2b = v_x*Math.sin(PI/4)+v_y*Math.cos(PI/4)-L*v_t;
@@ -89,8 +87,45 @@ function clickBtn1(){
     document.getElementById("power").innerHTML = MAX_power.toFixed(4);
     document.getElementById("rpm").innerHTML = MAX_rpm.toFixed(4);
     document.getElementById("tor").innerHTML = MAX_tor.toFixed(4);
+
+    //詳細情報掲示用
+    document.getElementById("wheel1_p").innerHTML = power1.toFixed(4);
+    document.getElementById("wheel2_p").innerHTML = power2.toFixed(4);
+    document.getElementById("wheel3_p").innerHTML = power3.toFixed(4);
+    document.getElementById("wheel4_p").innerHTML = power4.toFixed(4);
+
+    document.getElementById("wheel1_r").innerHTML = rpm1.toFixed(4);
+    document.getElementById("wheel2_r").innerHTML = rpm2.toFixed(4);
+    document.getElementById("wheel3_r").innerHTML = rpm3.toFixed(4);
+    document.getElementById("wheel4_r").innerHTML = rpm4.toFixed(4);
+
+    document.getElementById("wheel1_t").innerHTML = tor1.toFixed(4);
+    document.getElementById("wheel2_t").innerHTML = tor2.toFixed(4);
+    document.getElementById("wheel3_t").innerHTML = tor3.toFixed(4);
+    document.getElementById("wheel4_t").innerHTML = tor4.toFixed(4);
     
 }
+
+//---単位切り替え---//
+function unit_change(){
+    var tor_unit = document.getElementById("tor_unit").selectedIndex;
+
+    switch(tor_unit){
+        case 0:
+            document.getElementById("t_unit").innerHTML = "[N・m]";
+            break;
+        case 1:
+            document.getElementById("t_unit").innerHTML = "[kg・m]";
+            break;
+        case 2:
+            document.getElementById("t_unit").innerHTML = "[kg・cm]";
+            break;
+        case 3:
+            document.getElementById("t_unit").innerHTML = "[g・cm]";
+            break;
+    };
+}
+
 //---リセットボタン---//
 function clickBtn2(){
     document.getElementById("weight").value = 0;

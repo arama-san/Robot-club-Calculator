@@ -24,7 +24,7 @@
 
             <div class="data">
                 <p class="name">マシン重量/Weight</p>
-                <input type="number" value="20" min="0" class="input-Box" id="weight" onchange="change()">
+                <input type="number" value="0" min="0" class="input-Box" id="weight" onchange="change()">
                 <select class="unit" id="wei_unit">
                     <option value="1">kg</option>
                     <option value="0.001">g</option>
@@ -51,7 +51,7 @@
 
             <div class="data">
                 <p class="name">ホイール直径/Diameter</p>
-                <input type="number" value="100" min="0" class="input-Box" id="wheel" onchange="change()">
+                <input type="number" value="0" min="0" class="input-Box" id="wheel" onchange="change()">
                 <select class="unit" id="whe_unit">
                     <option value="0.001">mm</option>
                     <option value="0.01">cm</option>
@@ -61,7 +61,7 @@
 
             <div class="data">
                 <p class="name">移動速度[X]/Speed</p>
-                <input type="number" value="0.5" min="0" class="input-Box" id="v_x" onchange="change()">
+                <input type="number" value="0" min="0" class="input-Box" id="v_x" onchange="change()">
                 <select class="unit" id="v_x_unit">
                     <option value="1">m/s</option>
                     <option value="0.01">cm/s</option>
@@ -131,7 +131,7 @@
             <div class="data">
                 <p class="name">トルク/Torque</p>
                 <p class="output-Box" id="tor" type="number">0</p>
-                <select class="unit" id="tor_unit">
+                <select class="unit" id="tor_unit" onchange="unit_change()">
                     <option value="1">N・m</option>
                     <option value="0.102">kg・m</option>
                     <option value="10.2">kg・cm</option>
@@ -140,6 +140,44 @@
             </div>
         </div>
         
+        <div class="output-more">
+            <table>
+                <thead>
+                <tr>
+                <th>項目</th><th>wheel[1]</th><th>wheel[2]</th><th>wheel[3]</th><th>wheel[4]</th><th>unit</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                <th>出力</th>
+                <td class="output_list" id="wheel1_p">0</td>
+                <td class="output_list" id="wheel2_p">0</td>
+                <td class="output_list" id="wheel3_p">0</td>
+                <td class="output_list" id="wheel4_p">0</td>
+                <td class="output_list" id="p_unit">[W]</td>
+                </tr>
+                <tr>
+                <th>回転数</th>
+                <td class="output_list" id="wheel1_r">0</td>
+                <td class="output_list" id="wheel2_r">0</td>
+                <td class="output_list" id="wheel3_r">0</td>
+                <td class="output_list" id="wheel4_r">0</td>
+                <td class="output_list" id="r_unit">[rpm]</td>
+                </tr>
+                <tr>
+                <th>トルク</th>
+                <td class="output_list" id="wheel1_t">0</td>
+                <td class="output_list" id="wheel2_t">0</td>
+                <td class="output_list" id="wheel3_t">0</td>
+                <td class="output_list" id="wheel4_t">0</td>
+                <td class="output_list" id="t_unit">[N・m]</td>
+                </tr>
+                </tbody>
+
+                </table>
+        </div>
+
     </main>
 
     <footer>

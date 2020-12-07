@@ -105,3 +105,16 @@ main{
     text-align: right;
     width: 28%;
 }
+
+table{
+    border: 1px solid;
+}
+
+.output_list{
+    border: 1px solid;
+}
+
+th, td{
+    border: 1px solid;
+    width: 100px;
+}
