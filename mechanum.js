@@ -1,6 +1,7 @@
 const PI = Math.PI; //円周率定義
 
-function clickBtn1(){  
+function clickBtn1(){
+    //---データ取得---//
     var weight = document.getElementById("weight").value;
     var run_res = document.getElementById("run_res").value;
     var me = document.getElementById("me").value;
@@ -11,10 +12,6 @@ function clickBtn1(){
     var v_t = document.getElementById("v_t").value;// 0 ok  単位「°/s」
     var widthA = document.getElementById("widthA").value;
     var widthB = document.getElementById("widthB").value;
-
-    //---数値チェック---//
-
-    //---エラー表示---//
 
     //---単位取得---//
     var wei_unit = document.getElementById("wei_unit").value;
@@ -127,6 +124,7 @@ function unit_change(){
 
 //---リセットボタン---//
 function clickBtn2(){
+    document.getElementById("btnsound").play();
     document.getElementById("weight").value = 0;
     document.getElementById("me").value = 80;
     document.getElementById("wheel").value = 0;
