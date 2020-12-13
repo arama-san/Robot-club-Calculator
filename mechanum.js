@@ -65,10 +65,10 @@ function clickBtn1(){
     var power4 = Math.abs(power_total*(rpm4/rpm_total));
 
     //各ホイールの負荷トルク(各ホイールの出力に応じて)
-    var tor1 = power1*wheel*0.5*tor_unit/v_1;
-    var tor2 = power2*wheel*0.5*tor_unit/v_2;
-    var tor3 = power3*wheel*0.5*tor_unit/v_3;
-    var tor4 = power4*wheel*0.5*tor_unit/v_4;
+    var tor1 = (power1*wheel*0.5*tor_unit)/v_1;
+    var tor2 = (power2*wheel*0.5*tor_unit)/v_2;
+    var tor3 = (power3*wheel*0.5*tor_unit)/v_3;
+    var tor4 = (power4*wheel*0.5*tor_unit)/v_4;
 
     //最大回転数算出
     var MAX_rpm = Math.max.apply(null, [rpm1, rpm2, rpm3, rpm4]);
@@ -79,26 +79,59 @@ function clickBtn1(){
     //最大トルク算出
     var MAX_tor = Math.max(tor1, tor2, tor3, tor4);
 
-    //計算結果表示
-    document.getElementById("power").innerHTML = MAX_power.toFixed(4);
-    document.getElementById("rpm").innerHTML = MAX_rpm.toFixed(4);
-    document.getElementById("tor").innerHTML = MAX_tor.toFixed(4);
+    //値チェック
+    if(isFinite(MAX_rpm) == false || isFinite(MAX_power) == false || isFinite(MAX_tor) == false)    //エラーメッセージ
+    {
+        document.getElementById("error_sound").play();
+        document.getElementById("yuyu").style.color = "red";
 
-    //詳細情報掲示用
-    document.getElementById("wheel1_p").innerHTML = power1.toFixed(4);
-    document.getElementById("wheel2_p").innerHTML = power2.toFixed(4);
-    document.getElementById("wheel3_p").innerHTML = power3.toFixed(4);
-    document.getElementById("wheel4_p").innerHTML = power4.toFixed(4);
+        document.getElementById("power").innerHTML = "ERROR";
+        document.getElementById("rpm").innerHTML = "ERROR";
+        document.getElementById("tor").innerHTML = "ERROR";
 
-    document.getElementById("wheel1_r").innerHTML = rpm1.toFixed(4);
-    document.getElementById("wheel2_r").innerHTML = rpm2.toFixed(4);
-    document.getElementById("wheel3_r").innerHTML = rpm3.toFixed(4);
-    document.getElementById("wheel4_r").innerHTML = rpm4.toFixed(4);
+        document.getElementById("wheel1_p").innerHTML = "ERROR";
+        document.getElementById("wheel2_p").innerHTML = "ERROR";
+        document.getElementById("wheel3_p").innerHTML = "ERROR";
+        document.getElementById("wheel4_p").innerHTML = "ERROR";
 
-    document.getElementById("wheel1_t").innerHTML = tor1.toFixed(4);
-    document.getElementById("wheel2_t").innerHTML = tor2.toFixed(4);
-    document.getElementById("wheel3_t").innerHTML = tor3.toFixed(4);
-    document.getElementById("wheel4_t").innerHTML = tor4.toFixed(4);
+        document.getElementById("wheel1_r").innerHTML = "ERROR";
+        document.getElementById("wheel2_r").innerHTML = "ERROR";
+        document.getElementById("wheel3_r").innerHTML = "ERROR";
+        document.getElementById("wheel4_r").innerHTML = "ERROR";
+
+        document.getElementById("wheel1_t").innerHTML = "ERROR";
+        document.getElementById("wheel2_t").innerHTML = "ERROR";
+        document.getElementById("wheel3_t").innerHTML = "ERROR";
+        document.getElementById("wheel4_t").innerHTML = "ERROR";
+    }
+    else
+    {
+        document.getElementById("success_sound").play();
+        document.getElementById("yuyu").style.color = "aquamarine";
+
+
+        //計算結果表示
+        document.getElementById("power").innerHTML = MAX_power.toFixed(4);
+        document.getElementById("rpm").innerHTML = MAX_rpm.toFixed(4);
+        document.getElementById("tor").innerHTML = MAX_tor.toFixed(4);
+
+        //詳細情報掲示用
+        document.getElementById("wheel1_p").innerHTML = power1.toFixed(4);
+        document.getElementById("wheel2_p").innerHTML = power2.toFixed(4);
+        document.getElementById("wheel3_p").innerHTML = power3.toFixed(4);
+        document.getElementById("wheel4_p").innerHTML = power4.toFixed(4);
+
+        document.getElementById("wheel1_r").innerHTML = rpm1.toFixed(4);
+        document.getElementById("wheel2_r").innerHTML = rpm2.toFixed(4);
+        document.getElementById("wheel3_r").innerHTML = rpm3.toFixed(4);
+        document.getElementById("wheel4_r").innerHTML = rpm4.toFixed(4);
+
+        document.getElementById("wheel1_t").innerHTML = tor1.toFixed(4);
+        document.getElementById("wheel2_t").innerHTML = tor2.toFixed(4);
+        document.getElementById("wheel3_t").innerHTML = tor3.toFixed(4);
+        document.getElementById("wheel4_t").innerHTML = tor4.toFixed(4);
+    }
+    
     
 }
 
@@ -124,14 +157,33 @@ function unit_change(){
 
 //---リセットボタン---//
 function clickBtn2(){
-    document.getElementById("btnsound").play();
+    document.getElementById("btnsound").play(); //効果音
+    document.getElementById("yuyu").style.color = "aquamarine";
+
+
     document.getElementById("weight").value = 0;
     document.getElementById("me").value = 80;
     document.getElementById("wheel").value = 0;
     document.getElementById("v_x").value = 0;
     document.getElementById("v_y").value = 0;
+
     document.getElementById("power").innerHTML = 0;
     document.getElementById("rpm").innerHTML = 0;
     document.getElementById("tor").innerHTML = 0;
+
+    document.getElementById("wheel1_p").innerHTML = 0;
+    document.getElementById("wheel2_p").innerHTML = 0;
+    document.getElementById("wheel3_p").innerHTML = 0;
+    document.getElementById("wheel4_p").innerHTML = 0;
+
+    document.getElementById("wheel1_r").innerHTML = 0;
+    document.getElementById("wheel2_r").innerHTML = 0;
+    document.getElementById("wheel3_r").innerHTML = 0;
+    document.getElementById("wheel4_r").innerHTML = 0;
+
+    document.getElementById("wheel1_t").innerHTML = 0;
+    document.getElementById("wheel2_t").innerHTML = 0;
+    document.getElementById("wheel3_t").innerHTML = 0;
+    document.getElementById("wheel4_t").innerHTML = 0;
     
 }

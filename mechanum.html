@@ -20,7 +20,7 @@
         </div>
 
         <!--　入力欄　-->
-        <div class="input-collection">
+        <div class="input-collection" id="yuyu">
 
             <div class="data">
                 <p class="name">マシン重量/Weight</p>
@@ -139,7 +139,8 @@
                 </select>
             </div>
         </div>
-        
+
+        <!--詳細情報-->
         <div class="output-more">
             <table>
                 <thead>
@@ -147,35 +148,33 @@
                 <th>項目</th><th>wheel[1]</th><th>wheel[2]</th><th>wheel[3]</th><th>wheel[4]</th><th>unit</th>
                 </tr>
                 </thead>
-
                 <tbody>
-                <tr>
-                <th>出力</th>
-                <td class="output_list" id="wheel1_p">0</td>
-                <td class="output_list" id="wheel2_p">0</td>
-                <td class="output_list" id="wheel3_p">0</td>
-                <td class="output_list" id="wheel4_p">0</td>
-                <td id="p_unit">[W]</td>
-                </tr>
-                <tr>
-                <th>回転数</th>
-                <td class="output_list" id="wheel1_r">0</td>
-                <td class="output_list" id="wheel2_r">0</td>
-                <td class="output_list" id="wheel3_r">0</td>
-                <td class="output_list" id="wheel4_r">0</td>
-                <td id="r_unit">[rpm]</td>
-                </tr>
-                <tr>
-                <th>トルク</th>
-                <td class="output_list" id="wheel1_t">0</td>
-                <td class="output_list" id="wheel2_t">0</td>
-                <td class="output_list" id="wheel3_t">0</td>
-                <td class="output_list" id="wheel4_t">0</td>
-                <td id="t_unit">[N・m]</td>
-                </tr>
+                    <tr>
+                    <th>出力</th>
+                    <td class="output_list" id="wheel1_p">0</td>
+                    <td class="output_list" id="wheel2_p">0</td>
+                    <td class="output_list" id="wheel3_p">0</td>
+                    <td class="output_list" id="wheel4_p">0</td>
+                    <td id="p_unit">[W]</td>
+                    </tr>
+                    <tr>
+                    <th>回転数</th>
+                    <td class="output_list" id="wheel1_r">0</td>
+                    <td class="output_list" id="wheel2_r">0</td>
+                    <td class="output_list" id="wheel3_r">0</td>
+                    <td class="output_list" id="wheel4_r">0</td>
+                    <td id="r_unit">[rpm]</td>
+                    </tr>
+                    <tr>
+                    <th>トルク</th>
+                    <td class="output_list" id="wheel1_t">0</td>
+                    <td class="output_list" id="wheel2_t">0</td>
+                    <td class="output_list" id="wheel3_t">0</td>
+                    <td class="output_list" id="wheel4_t">0</td>
+                    <td id="t_unit">[N・m]</td>
+                    </tr>
                 </tbody>
-
-                </table>
+            </table>
         </div>
 
     </main>
@@ -184,12 +183,19 @@
     
     </footer>
 
+    <!--効果音読み込み-->
     <audio id="btnsound" preload="auto">
         <source src="sound/decision17.mp3">
     </audio>
-    <audio id="errersound" preload="auto">
+
+    <audio id="success_sound" preload="auto">
+        <source src="sound/decision24.mp3">
+    </audio>
+
+    <audio id="error_sound" preload="auto">
         <source src="sound/warning1.mp3">
     </audio>
+
     <script type="text/javascript" src="mechanum.js"></script>
 </body>
 
