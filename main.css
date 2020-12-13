@@ -17,6 +17,7 @@ header span{
     float:left;
     font: size 40px;
     margin:20px 40px;
+    color: white;
 }
 .header-list{
     float: right;
@@ -64,9 +65,25 @@ main h3{
     transition: all 1s;
     width: 100%;
 }
+/*点滅*/
 .contents-block img:hover{
-    opacity: 0.7;
-}
+        -webkit-animation:blink 0.2s ease-in-out infinite alternate;
+        -moz-animation:blink 0.2s ease-in-out infinite alternate;
+        animation:blink 0.2s ease-in-out infinite alternate;
+    }
+    @-webkit-keyframes blink{
+        80% {opacity:0.8;}
+        100% {opacity:1;}
+    }
+    @-moz-keyframes blink{
+        80% {opacity:0.8;}
+        100% {opacity:1;}
+    }
+    @keyframes blink{
+        80% {opacity:0.8;}
+        100% {opacity:1;}
+    }
+
 .contents-block p{
     background-color: rgba(0,0,0,0.9);
     border: 1px solid;
@@ -86,3 +103,5 @@ main h3{
     background-color: aquamarine;
 }
 /*-------------------------*/
+
+/* 点滅 */
