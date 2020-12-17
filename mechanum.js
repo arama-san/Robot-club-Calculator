@@ -138,7 +138,7 @@ function clickBtn1(){
 //---単位切り替え---//
 function unit_change(){
     var tor_unit = document.getElementById("tor_unit").selectedIndex;
-
+    clickBtn1();
     switch(tor_unit){
         case 0:
             document.getElementById("t_unit").innerHTML = "[N・m]";
