@@ -7,6 +7,196 @@
 
 <body>
 
+    <header>
+        <h1 class="header-logo">オムニ計算[3]/<span>Omuni-Calculation</span></h1>
+        <ul class="header-list">
+            <a href="main.html"><li>トップへ戻る</li></a>
+            <li>計算手順</li>
+        </ul>
+    </header>
+
+
+    <main>
+        <div class="mechanum">
+            <img class="mechanum-img" src="image/オムニ3輪計算用画像.jpg">
+        </div>
+
+        <!--　入力欄　-->
+        <div class="input-collection" id="yuyu">
+
+            <div class="data">
+                <p class="name">マシン重量/Weight</p>
+                <input type="number" value="0" min="0" class="input-Box" id="weight" onchange="change()">
+                <select class="unit" id="wei_unit">
+                    <option value="1">kg</option>
+                    <option value="0.001">g</option>
+                </select>
+            </div>
+
+            <div class="data">
+                <p class="name">走行抵抗係数/Running resistance</p> 
+                <input type="number" value="3" min="0" max="100" class="input-Box" id="run_res" onchange="change()">
+                <p class="unit">%</p>
+            </div>
+
+            <div class="data">
+                <p class="name">機械効率/Mechanical Efficiency</p> 
+                <input type="number" value="80" min="0" max="100" class="input-Box" id="me" onchange="change()">
+                <p class="unit">%</p>
+            </div>
+
+            <div class="data">
+                <p class="name">地面の傾き/slope</p> 
+                <input type="number" value="0" min="0" max="90" class="input-Box" id="slope" onchange="change()">
+                <p class="unit">°</p>
+            </div>
+
+            <div class="data">
+                <p class="name">ホイール直径/Diameter</p>
+                <input type="number" value="0" min="0" class="input-Box" id="wheel" onchange="change()">
+                <select class="unit" id="whe_unit">
+                    <option value="0.001">mm</option>
+                    <option value="0.01">cm</option>
+                    <option value="1">m</option>
+                </select>
+            </div>
+
+            <div class="data">
+                <p class="name">移動速度[X]/Speed</p>
+                <input type="number" value="0" min="0" class="input-Box" id="v_x" onchange="change()">
+                <select class="unit" id="v_x_unit">
+                    <option value="1">m/s</option>
+                    <option value="0.01">cm/s</option>
+                    <option value="0.001">mm/s</option>
+                    <option value="0.2777">km/h</option>
+                </select>
+            </div>
+
+            <div class="data">
+                <p class="name">移動速度[Y]/Speed</p>
+                <input type="number" value="0" min="0" class="input-Box" id="v_y" onchange="change()">
+                <select class="unit" id="v_y_unit">
+                    <option value="1">m/s</option>
+                    <option value="0.01">cm/s</option>
+                    <option value="0.001">mm/s</option>
+                    <option value="0.2777">km/h</option>
+                </select>
+            </div>
+
+            <div class="data">
+                <p class="name">旋回速度/TurnSpeed</p>
+                <input type="number" value="0" min="0" class="input-Box" id="v_t" onchange="change()">
+                <p class="unit">°/s</p>
+            </div>
+
+            <div class="data">
+                <p class="name">車体幅A/Body width</p>
+                <input type="number" value="0" min="0" class="input-Box" id="widthA" onchange="change()">
+                <select class="unit" id="widthA_unit">
+                    <option value="0.001">mm</option>
+                    <option value="0.01">cm</option>
+                    <option value="1">m</option>
+                </select>
+            </div>
+
+            <div class="data">
+                <p class="name">車体幅B/Body width</p>
+                <input type="number" value="0" min="0" class="input-Box" id="widthB" onchange="change()">
+                <select class="unit" id="widthB_unit">
+                    <option value="0.001">mm</option>
+                    <option value="0.01">cm</option>
+                    <option value="1">m</option>
+                </select>
+            </div>
+
+            <!-- 計算ボタン -->
+            <button class="cal-button" onclick="clickBtn1()">-計算/Calculate-</button>
+            <!--リセットボタン-->
+            <button class="cal-button" onclick="clickBtn2()">-リセット/Reset-</button>
+            
+        </div>
+
+    <!--　計算結果表示　-->
+        <div class="output-collection">
+            <div class="data">
+                <p class="name">出力/Power</p>
+                <p class="output-Box" id="power" type="number">0</p>
+                <p class="unit">W</p>
+            </div>
+
+            <div class="data">
+                <p class="name">回転数/Revolutions</p>
+                <p class="output-Box" id="rpm" type="number">0</p>
+                <p class="unit">rpm</p>
+            </div>
+
+            <div class="data">
+                <p class="name">トルク/Torque</p>
+                <p class="output-Box" id="tor" type="number">0</p>
+                <select class="unit" id="tor_unit" onchange="unit_change()">
+                    <option value="1">N・m</option>
+                    <option value="0.102">kg・m</option>
+                    <option value="10.2">kg・cm</option>
+                    <option value="10200">g・cm</option>
+                </select>
+            </div>
+        </div>
+
+        <!--詳細情報-->
+        <div class="output-more">
+            <table>
+                <thead>
+                <tr>
+                <th>項目</th><th>wheel[1]</th><th>wheel[2]</th><th>wheel[3]</th><th>unit</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th>出力</th>
+                    <td class="output_list" id="wheel1_p">0</td>
+                    <td class="output_list" id="wheel2_p">0</td>
+                    <td class="output_list" id="wheel3_p">0</td>
+                    <td id="p_unit">[W]</td>
+                    </tr>
+                    <tr>
+                    <th>回転数</th>
+                    <td class="output_list" id="wheel1_r">0</td>
+                    <td class="output_list" id="wheel2_r">0</td>
+                    <td class="output_list" id="wheel3_r">0</td>
+                    <td id="r_unit">[rpm]</td>
+                    </tr>
+                    <tr>
+                    <th>トルク</th>
+                    <td class="output_list" id="wheel1_t">0</td>
+                    <td class="output_list" id="wheel2_t">0</td>
+                    <td class="output_list" id="wheel3_t">0</td>
+                    <td id="t_unit">[N・m]</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+
+    <footer>
+
+    </footer>
+
+     <!--効果音読み込み-->
+     <audio id="btnsound" preload="auto">
+        <source src="sound/decision17.mp3">
+    </audio>
+
+    <audio id="success_sound" preload="auto">
+        <source src="sound/decision24.mp3">
+    </audio>
+
+    <audio id="error_sound" preload="auto">
+        <source src="sound/warning1.mp3">
+    </audio>
+
+    <script type="text/javascript" src="omuni3.js"></script>
 </body>
 
 </html>
