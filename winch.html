@@ -19,7 +19,7 @@
             <img class="winch-img" src="image/ウインチ計算用画像.jpg">
         </div>
     <!--　入力欄　-->
-        <div class="input-collection">
+        <div class="input-collection" id="yuyu">
             <div class="data">
                 <p class="name">重量/Weight</p>
                 <input type="number" value="0" min="0" class="input-Box" id="weight" onchange="change()">
@@ -93,6 +93,19 @@
     <footer>
         
     </footer>
+
+    <!--効果音読み込み-->
+    <audio id="btnsound" preload="auto">
+        <source src="sound/decision17.mp3">
+    </audio>
+
+    <audio id="success_sound" preload="auto">
+        <source src="sound/decision24.mp3">
+    </audio>
+
+    <audio id="error_sound" preload="auto">
+        <source src="sound/warning1.mp3">
+    </audio>
 
     <script type="text/javascript" src="winch.js"></script>
 </body>
