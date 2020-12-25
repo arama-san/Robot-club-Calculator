@@ -1,8 +1,37 @@
 const PI = Math.PI; //円周率定義
 
-function clickBtn1(){
+function color_AllGreen(){
+    //カラーオールグリーン
+    document.getElementById("weight_name").style.color = "aquamarine";
+    document.getElementById("wheel_name").style.color = "aquamarine";
+    document.getElementById("v_x_name").style.color = "aquamarine";
+    document.getElementById("v_y_name").style.color = "aquamarine";
+    document.getElementById("v_t_name").style.color = "aquamarine";
+    document.getElementById("widthA_name").style.color = "aquamarine";
+    document.getElementById("widthB_name").style.color = "aquamarine";
+}
+
+function v_t_change(){      //旋回速度が0じゃないとき車体幅を入力できるようにする。
+    var v_t = document.getElementById("v_t").value;
+    var width_area_ly = document.getElementsByClassName("width")
+
+    if(v_t != 0){
+        for(var i=0; i<width_area_ly.length; i++){
+            width_area_ly[i].style.display = "block";
+        }
+    }
+    else{
+        for(var i=0; i<width_area_ly.length; i++){
+            width_area_ly[i].style.display = "none";
+        }
+    }
+}
+
+
+function calculateBtn(){
+    color_AllGreen();
     //---データ取得---//
-    var weight = document.getElementById("weight").value;
+    var weight = document.getElementById("weight").value;   //0　ok
     var run_res = document.getElementById("run_res").value;
     var me = document.getElementById("me").value;
     var slope = document.getElementById("slope").value; //0 ok
@@ -83,7 +112,27 @@ function clickBtn1(){
     if(isFinite(MAX_rpm) == false || isFinite(MAX_power) == false || isFinite(MAX_tor) == false)    //エラーメッセージ
     {
         document.getElementById("error_sound").play();
-        document.getElementById("yuyu").style.color = "red";
+
+        if(wheel == 0)
+        {
+            document.getElementById("wheel_name").style.color = "red";
+        }
+
+        if(v_x == 0 && v_y == 0)
+        {
+            document.getElementById("v_x_name").style.color = "red"
+            document.getElementById("v_y_name").style.color = "red"
+        }
+        
+        if(v_t != 0 )
+        {
+            if(widthA == 0){
+                document.getElementById("widthA_name").style.color = "red";
+            }
+            if(widthB == 0){
+                document.getElementById("widthB_name").style.color = "red";
+            }
+        }
 
         document.getElementById("power").innerHTML = "ERROR";
         document.getElementById("rpm").innerHTML = "ERROR";
@@ -107,8 +156,7 @@ function clickBtn1(){
     else
     {
         document.getElementById("success_sound").play();
-        document.getElementById("yuyu").style.color = "aquamarine";
-
+        color_AllGreen();
 
         //計算結果表示
         document.getElementById("power").innerHTML = MAX_power.toFixed(4);
@@ -131,14 +179,12 @@ function clickBtn1(){
         document.getElementById("wheel3_t").innerHTML = tor3.toFixed(4);
         document.getElementById("wheel4_t").innerHTML = tor4.toFixed(4);
     }
-    
-    
 }
 
 //---単位切り替え---//
 function unit_change(){
     var tor_unit = document.getElementById("tor_unit").selectedIndex;
-    clickBtn1();
+    calculateBtn();
     switch(tor_unit){
         case 0:
             document.getElementById("t_unit").innerHTML = "[N・m]";
@@ -156,16 +202,18 @@ function unit_change(){
 }
 
 //---リセットボタン---//
-function clickBtn2(){
+function ResetBtn(){
     document.getElementById("btnsound").play(); //効果音
-    document.getElementById("yuyu").style.color = "aquamarine";
+    color_AllGreen();
 
-
+    //数値リセット
     document.getElementById("weight").value = 0;
+    document.getElementById("run_res").value = 3;
     document.getElementById("me").value = 80;
     document.getElementById("wheel").value = 0;
     document.getElementById("v_x").value = 0;
     document.getElementById("v_y").value = 0;
+    document.getElementById("v_t").value = 0;
 
     document.getElementById("power").innerHTML = 0;
     document.getElementById("rpm").innerHTML = 0;

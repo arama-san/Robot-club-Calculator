@@ -20,12 +20,12 @@
         </div>
 
         <!--　入力欄　-->
-        <div class="input-collection" id="yuyu">
+        <div class="input-collection">
 
             <div class="data">
-                <p class="name">マシン重量/Weight</p>
-                <input type="number" value="0" min="0" class="input-Box" id="weight" onchange="change()">
-                <select class="unit" id="wei_unit">
+                <p class="name" id="weight_name">マシン重量/Weight</p>
+                <input type="number" value="0" min="0" class="input-Box" id="weight">
+                <select class="unit sp1" id="wei_unit">
                     <option value="1">kg</option>
                     <option value="0.001">g</option>
                 </select>
@@ -33,26 +33,26 @@
 
             <div class="data">
                 <p class="name">走行抵抗係数/Running resistance</p> 
-                <input type="number" value="3" min="0" max="100" class="input-Box" id="run_res" onchange="change()">
-                <p class="unit">%</p>
+                <input type="number" value="3" min="1" max="100" class="input-Box" id="run_res">
+                <p class="unit nor">%</p>
             </div>
 
             <div class="data">
                 <p class="name">機械効率/Mechanical Efficiency</p> 
-                <input type="number" value="80" min="0" max="100" class="input-Box" id="me" onchange="change()">
-                <p class="unit">%</p>
+                <input type="number" value="80" min="1" max="100" class="input-Box" id="me">
+                <p class="unit nor">%</p>
             </div>
 
             <div class="data">
                 <p class="name">地面の傾き/slope</p> 
-                <input type="number" value="0" min="0" max="90" class="input-Box" id="slope" onchange="change()">
-                <p class="unit">°</p>
+                <input type="number" value="0" min="0" max="90" class="input-Box" id="slope">
+                <p class="unit nor">°</p>
             </div>
 
             <div class="data">
-                <p class="name">ホイール直径/Diameter</p>
-                <input type="number" value="0" min="0" class="input-Box" id="wheel" onchange="change()">
-                <select class="unit" id="whe_unit">
+                <p class="name" id="wheel_name">ホイール直径/Diameter</p>
+                <input type="number" value="0" min="0" class="input-Box" id="wheel">
+                <select class="unit sp1" id="whe_unit">
                     <option value="0.001">mm</option>
                     <option value="0.01">cm</option>
                     <option value="1">m</option>
@@ -60,9 +60,9 @@
             </div>
 
             <div class="data">
-                <p class="name">移動速度[X]/Speed</p>
-                <input type="number" value="0" min="0" class="input-Box" id="v_x" onchange="change()">
-                <select class="unit" id="v_x_unit">
+                <p class="name" id="v_x_name">移動速度[X]/Speed</p>
+                <input type="number" value="0" min="0" class="input-Box" id="v_x">
+                <select class="unit sp1" id="v_x_unit">
                     <option value="1">m/s</option>
                     <option value="0.01">cm/s</option>
                     <option value="0.001">mm/s</option>
@@ -71,9 +71,9 @@
             </div>
 
             <div class="data">
-                <p class="name">移動速度[Y]/Speed</p>
-                <input type="number" value="0" min="0" class="input-Box" id="v_y" onchange="change()">
-                <select class="unit" id="v_y_unit">
+                <p class="name" id="v_y_name">移動速度[Y]/Speed</p>
+                <input type="number" value="0" min="0" class="input-Box" id="v_y">
+                <select class="unit sp1" id="v_y_unit">
                     <option value="1">m/s</option>
                     <option value="0.01">cm/s</option>
                     <option value="0.001">mm/s</option>
@@ -82,35 +82,37 @@
             </div>
 
             <div class="data">
-                <p class="name">旋回速度/TurnSpeed</p>
-                <input type="number" value="0" min="0" class="input-Box" id="v_t" onchange="change()">
-                <p class="unit">°/s</p>
+                <p class="name" id="v_t_name">旋回速度/TurnSpeed</p>
+                <input type="number" value="0" min="0" class="input-Box" id="v_t" onchange="v_t_change()">
+                <p class="unit nor">°/s</p>
             </div>
 
-            <div class="data">
-                <p class="name">車体幅A/Body width</p>
-                <input type="number" value="0" min="0" class="input-Box" id="widthA" onchange="change()">
-                <select class="unit" id="widthA_unit">
-                    <option value="0.001">mm</option>
-                    <option value="0.01">cm</option>
-                    <option value="1">m</option>
-                </select>
-            </div>
+            <div class="width">
+                <div class="data">
+                    <p class="name" id="widthA_name">車体幅A/Body width</p>
+                    <input type="number" value="0" min="0" class="input-Box" id="widthA">
+                    <select class="unit sp1" id="widthA_unit">
+                        <option value="0.001">mm</option>
+                        <option value="0.01">cm</option>
+                        <option value="1">m</option>
+                    </select>
+                </div>
 
-            <div class="data">
-                <p class="name">車体幅B/Body width</p>
-                <input type="number" value="0" min="0" class="input-Box" id="widthB" onchange="change()">
-                <select class="unit" id="widthB_unit">
-                    <option value="0.001">mm</option>
-                    <option value="0.01">cm</option>
-                    <option value="1">m</option>
-                </select>
+                <div class="data">
+                    <p class="name" id="widthB_name">車体幅B/Body width</p>
+                    <input type="number" value="0" min="0" class="input-Box" id="widthB">
+                    <select class="unit sp1" id="widthB_unit">
+                        <option value="0.001">mm</option>
+                        <option value="0.01">cm</option>
+                        <option value="1">m</option>
+                    </select>
+                </div>
             </div>
 
             <!-- 計算ボタン -->
-            <button class="cal-button" onclick="clickBtn1()">-計算/Calculate-</button>
+            <button class="cal-button" onclick="calculateBtn()">-計算/Calculate-</button>
             <!--リセットボタン-->
-            <button class="cal-button" onclick="clickBtn2()">-リセット/Reset-</button>
+            <button class="cal-button" onclick="ResetBtn()">-リセット/Reset-</button>
             
         </div>
 
@@ -119,19 +121,19 @@
             <div class="data">
                 <p class="name">出力/Power</p>
                 <p class="output-Box" id="power" type="number">0</p>
-                <p class="unit">W</p>
+                <p class="unit nor">W</p>
             </div>
 
             <div class="data">
                 <p class="name">回転数/Revolutions</p>
                 <p class="output-Box" id="rpm" type="number">0</p>
-                <p class="unit">rpm</p>
+                <p class="unit nor">rpm</p>
             </div>
 
             <div class="data">
                 <p class="name">トルク/Torque</p>
                 <p class="output-Box" id="tor" type="number">0</p>
-                <select class="unit" id="tor_unit" onchange="unit_change()">
+                <select class="unit sp2" id="tor_unit" onchange="unit_change()">
                     <option value="1">N・m</option>
                     <option value="0.102">kg・m</option>
                     <option value="10.2">kg・cm</option>
