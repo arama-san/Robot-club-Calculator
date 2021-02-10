@@ -2,7 +2,6 @@ const PI = Math.PI; //円周率定義
 
 function color_AllGreen(){
     //カラーオールグリーン
-    document.getElementById("weight_name").style.color = "aquamarine";
     document.getElementById("wheel_name").style.color = "aquamarine";
     document.getElementById("v_x_name").style.color = "aquamarine";
     document.getElementById("v_y_name").style.color = "aquamarine";
