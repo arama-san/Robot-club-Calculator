@@ -108,6 +108,15 @@ function calculateBtn(){
     var MAX_tor = Math.max(tor1, tor2, tor3, tor4);
 
     //値チェック
+    if(weight==0)
+        {
+            document.getElementById("weight_name").style.color = "yellow";
+        }
+    else
+        {
+            document.getElementById("weight_name").style.color = "aquamarine";
+        }   
+    
     if(isFinite(MAX_rpm) == false || isFinite(MAX_power) == false || isFinite(MAX_tor) == false)    //エラーメッセージ
     {
         document.getElementById("error_sound").play();
@@ -204,6 +213,7 @@ function unit_change(){
 function ResetBtn(){
     document.getElementById("btnsound").play(); //効果音
     color_AllGreen();
+    document.getElementById("weight_name").style.color = "aquamarine";
 
     //数値リセット
     document.getElementById("weight").value = 0;
