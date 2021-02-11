@@ -12,7 +12,7 @@ function color_AllGreen(){
 
 function v_t_change(){      //旋回速度が0じゃないとき車体幅を入力できるようにする。
     var v_t = document.getElementById("v_t").value;
-    var width_area_ly = document.getElementsByClassName("width")
+    var width_area_ly = document.getElementsByClassName("width");
 
     if(v_t != 0){
         for(var i=0; i<width_area_ly.length; i++){
