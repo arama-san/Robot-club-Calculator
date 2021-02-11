@@ -1,5 +1,11 @@
 const PI = Math.PI; //円周率定義
 
+function color_AllGreen(){
+    //カラーオールグリーン
+    document.getElementById("wheel_name").style.color = "aquamarine";
+    document.getElementById("v_name").style.color = "aquamarine";
+}
+
 function clickBtn1(){
     //---データ取得---//
     var weight = document.getElementById("weight").value;
@@ -34,21 +40,38 @@ function clickBtn1(){
     var tor = (power*wheel*0.5*tor_unit)/v;
 
 
-
+    if(weight == 0)
+    {
+        document.getElementById("weight_name").style.color = "yellow";
+    }
+    else
+    {
+        document.getElementById("weight_name").style.color = "aquamarine";
+    }
+    
     //値チェック
     if(isFinite(rpm) == false || isFinite(power) == false || isFinite(tor) == false)    //エラーメッセージ
     {
         document.getElementById("error_sound").play();
-        document.getElementById("yuyu").style.color = "red";
 
         document.getElementById("power").innerHTML = "ERROR";
         document.getElementById("rpm").innerHTML = "ERROR";
         document.getElementById("tor").innerHTML = "ERROR";
+
+        if(wheel==0)
+        {
+            document.getElementById("wheel_name").style.color = "red";
+        }
+        if(v==0)
+        {
+            document.getElementById("v_name").style.color = "red";
+        }
     }
-    else
+    else    //正常
     {
         document.getElementById("success_sound").play();
-        document.getElementById("yuyu").style.color = "aquamarine";
+        color_AllGreen();
+
 
         //計算結果表示
         document.getElementById("power").innerHTML = power.toFixed(4);
@@ -60,8 +83,8 @@ function clickBtn1(){
 //---リセットボタン---//
 function clickBtn2(){
     document.getElementById("btnsound").play(); //効果音
-    document.getElementById("yuyu").style.color = "aquamarine";
-
+    color_AllGreen();
+    document.getElementById("weight_name").style.color = "aquamarine";
 
     document.getElementById("weight").value = 0;
     document.getElementById("me").value = 80;
