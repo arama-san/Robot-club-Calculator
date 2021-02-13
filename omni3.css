@@ -39,12 +39,14 @@ main{
     float: left;
 }
 .input-collection{
+    position:absolute;
+    top: 100px;
+    left: 500px; /*位置調整*/
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin-left: 20px;
-    width:460px;
+    width:500px;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 .data{
     margin: 10px;
@@ -63,16 +65,26 @@ main{
     border-color: aquamarine;
     border-radius: 5px;
     text-align: right;
-    width: 30%;
+    width: 100px;
 }
 .unit{
     margin: 0;
-    width: 18%;
     color: aquamarine;
     background-color: black;
     border: 1px solid;
     border-color: aquamarine;
 }
+/*unitの第二クラス*/
+.nor{
+    width: 80px;
+}
+.sp1{
+    width: 83px;
+}
+.sp2{
+    width: 68px;
+}
+
 .cal-button{
     color: aquamarine;
     background-color: black;
