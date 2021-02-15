@@ -9,6 +9,7 @@ header{
     color:aquamarine;
     height: 90px;
     width: 100%;
+    background: radial-gradient(ellipse at center,black,rgb(4, 44, 41),rgba(45, 75, 69, 0.8));
 }
 header span{
     font-size: 20px;
@@ -44,44 +45,74 @@ main h3{
     border: 3px solid;
     padding: 12px;
     width: 70%;
+    background: radial-gradient(ellipse at center,black,rgb(4, 44, 41),rgba(45, 75, 69, 0.8));
 }
+
 .asi-area{
-    height:320px;
+    height: 300px;
 }
 .other-area{
     clear: both;
     height: 300px;
 }
 .contents-block{
-    float:left;
-    height:200px;
-    margin:10px 10px;
+    float: left;
+    height: 200px;
+    margin: 10px 10px;
     position: relative;
-    width:200px;
+    width: 200px;
+    background-color: black;
 }
+.mechanum{
+    background-image: url(image/メカナムアイコンムーブ.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.steering{
+    background-image: url(image/ステアリングアイコンムーブ.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.omni3{
+    background-image: url(image/ステアリングアイコンムーブ.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.omni4{
+    background-image: url(image/ステアリングアイコンムーブ.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .contents-block img{
     height: 100%;
     transition: all 1s;
     width: 100%;
+    background-color: black;
 }
-/*点滅*/
+
 .contents-block img:hover{
-        -webkit-animation:blink 0.2s ease-in-out infinite alternate;
-        -moz-animation:blink 0.2s ease-in-out infinite alternate;
-        animation:blink 0.2s ease-in-out infinite alternate;
-    }
-    @-webkit-keyframes blink{
-        80% {opacity:0.8;}
-        100% {opacity:1;}
-    }
-    @-moz-keyframes blink{
-        80% {opacity:0.8;}
-        100% {opacity:1;}
-    }
-    @keyframes blink{
-        80% {opacity:0.8;}
-        100% {opacity:1;}
-    }
+    opacity: 0.01;
+}
+
+/*点滅-没案*/
+/* .contents-block img:hover{
+    -webkit-animation:blink 0.2s ease-in-out infinite alternate;
+    -moz-animation:blink 0.2s ease-in-out infinite alternate;
+    animation:blink 0.2s ease-in-out infinite alternate;
+}
+@-webkit-keyframes blink{
+    80% {opacity:0.8;}
+    100% {opacity:1;}
+}
+@-moz-keyframes blink{
+    80% {opacity:0.8;}
+    100% {opacity:1;}
+}
+@keyframes blink{
+    80% {opacity:0.8;}
+    100% {opacity:1;}
+} */
 
 .contents-block p{
     background-color: rgba(0,0,0,0.9);
@@ -91,16 +122,5 @@ main h3{
     height: 22px;
     position: absolute;
     text-align: center;
-    width: 100%;
+    width: 198px;
 }
-
-/*contents-blockの第二クラス*/
-.asi{
-    
-}
-.other{
-    background-color: aquamarine;
-}
-/*-------------------------*/
-
-/* 点滅 */
