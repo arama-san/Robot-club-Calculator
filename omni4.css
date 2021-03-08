@@ -1,0 +1,133 @@
+/* bodyの内容 */
+body{
+    background: radial-gradient(ellipse at center,black,rgb(4, 44, 41),rgb(45, 75, 69));
+}
+/* headerの内容*/
+header{
+    border: 3px solid;
+    color:aquamarine;
+    height: 90px;
+    width: 100%;
+}
+header span{
+    font-size: 20px;
+}
+.header-logo{
+    float:left;
+    font: size 40px;
+    margin:20px 40px;
+}
+.header-list{
+    float: right;
+    list-style: none;
+}
+.header-list li{
+    float: left;
+    margin-top:25px;
+    margin-right:20px;
+}
+a{
+    color: aquamarine;
+}
+/* mainの内容 */
+main{
+    color: aquamarine;
+}
+.mechanum-img{
+    width: 450px;
+    height: 450px;
+    float: left;
+}
+.input-collection{
+    position:absolute;
+    top: 100px;
+    left: 500px; /*位置調整*/
+    display: flex;
+    flex-direction: column;
+    width:500px;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+.data{
+    margin: 10px;
+    display: flex;
+    width: 100%;
+    height: 25px;
+}
+.name{
+    margin: 0;
+    width: 65%;
+}
+.input-Box{
+    margin-right: 5px;
+    color: aquamarine;
+    background-color: black;
+    border-color: aquamarine;
+    border-radius: 5px;
+    text-align: right;
+    width: 100px;
+}
+.unit{
+    margin: 0;
+    color: aquamarine;
+    background-color: black;
+    border: 1px solid;
+    border-color: aquamarine;
+}
+/*unitの第二クラス*/
+.nor{
+    width: 80px;
+}
+.sp1{
+    width: 83px;
+}
+.sp2{
+    width: 68px;
+}
+
+.cal-button{
+    color: aquamarine;
+    background-color: black;
+    border: 1px solid;
+    width: 160px;
+    margin: 5px auto; 
+}
+.cal-button:hover{
+    color: red;
+}
+.cal-button:active{
+    color: black;
+    background-color: red;
+}
+.output-collection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 20px;
+    width: 460px;
+}
+.output-Box{
+    margin: 0px 5px 0px 0px;
+    padding-right: 15px;
+    color: aquamarine;
+    background-color: black;
+    border: 2px solid;
+    border-radius: 5px;
+    text-align: right;
+    width: 28%;
+}
+
+table{
+    border: 1px solid;
+}
+
+.output_list{
+    border: 1px solid;
+    text-align: right;
+}
+
+th, td{
+    border: 1px solid;
+    width: 100px;
+}
