@@ -37,6 +37,9 @@ main{
     width: 450px;
     height: 450px;
     float: left;
+    margin: 20px;
+    border-color: aquamarine;
+    border: 3px solid;
 }
 .input-collection{
     position:absolute;
@@ -56,7 +59,7 @@ main{
 }
 .name{
     margin: 0;
-    width: 65%;
+    width: 300px;
 }
 .input-Box{
     margin-right: 5px;
@@ -100,12 +103,16 @@ main{
     background-color: red;
 }
 .output-collection{
+    background-color: rgba(0, 0, 0, 0.1);
+    position:absolute;
+    top: 650px;
+    left: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     margin-left: 20px;
-    width: 460px;
+    width: 400px;
 }
 .output-Box{
     margin: 0px 5px 0px 0px;
@@ -120,6 +127,9 @@ main{
 
 table{
     border: 1px solid;
+    top: 650px;
+    left: 500px;
+    position: absolute;
 }
 
 .output_list{
