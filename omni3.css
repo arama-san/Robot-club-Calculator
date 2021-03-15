@@ -88,6 +88,9 @@ main{
     width: 68px;
 }
 
+.width{
+    display: none;
+}
 .cal-button{
     color: aquamarine;
     background-color: black;
