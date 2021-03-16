@@ -223,6 +223,8 @@ function ResetBtn(){
     document.getElementById("v_x").value = 0;
     document.getElementById("v_y").value = 0;
     document.getElementById("v_t").value = 0;
+    document.getElementById("widthA").value = 0;
+    document.getElementById("widthB").value = 0;
 
     document.getElementById("power").innerHTML = 0;
     document.getElementById("rpm").innerHTML = 0;
